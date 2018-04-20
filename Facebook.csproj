@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A382FE1-9687-4DA3-BF83-80B847240867}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Facebook</RootNamespace>
+    <AssemblyName>Facebook</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\FacebookItemCategories.cs" />
+    <Compile Include="Enums\FacebookItemFields.cs" />
+    <Compile Include="Enums\FacebookItemSubFields.cs" />
+    <Compile Include="Extensions\Convert.Extensions.cs" />
+    <Compile Include="Extensions\ConvertFields.Extensions.cs" />
+    <Compile Include="Extensions\FacebookConfiguration.Extensions.cs" />
+    <Compile Include="Helpers\FacebookHelper.cs" />
+    <Compile Include="Helpers\IdHelper.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Json\Categories\Albums\Albums.cs" />
+    <Compile Include="Json\Categories\Events\Events.cs" />
+    <Compile Include="Json\Categories\Page\Page.cs" />
+    <Compile Include="Json\Categories\Photos\Photos.cs" />
+    <Compile Include="Json\Categories\Picture\Picture.cs" />
+    <Compile Include="Json\Categories\Posts\Posts.cs" />
+    <Compile Include="Json\Categories\Videos\Videos.cs" />
+    <Compile Include="Json\Fields\Category\Category.cs" />
+    <Compile Include="Json\Fields\Comments\Comments.cs" />
+    <Compile Include="Json\Fields\FanCount\FanCount.cs" />
+    <Compile Include="Json\Fields\Likes\Likes.cs" />
+    <Compile Include="Json\Fields\Link\Link.cs" />
+    <Compile Include="Json\Fields\Picture\Picture.cs" />
+    <Compile Include="Json\Fields\Place\Place.cs" />
+    <Compile Include="Json\Fields\Shares\Shares.cs" />
+    <Compile Include="Json\Fields\Source\Source.cs" />
+    <Compile Include="Models\Input\AbstractFacebookConfiguration.cs" />
+    <Compile Include="Models\Input\FacebookConfiguration.cs" />
+    <Compile Include="Models\Input\FacebookModel.cs" />
+    <Compile Include="Models\Input\IFacebookConfiguration.cs" />
+    <Compile Include="Models\Input\IFacebookModel.cs" />
+    <Compile Include="Models\Input\IFConfiguration.cs" />
+    <Compile Include="Models\Output\Categories\FacebookAlbum.cs" />
+    <Compile Include="Models\Output\Categories\FacebookEvent.cs" />
+    <Compile Include="Models\Output\Categories\FacebookPhoto.cs" />
+    <Compile Include="Models\Output\Categories\FacebookPicture.cs" />
+    <Compile Include="Models\Output\Categories\FacebookPost.cs" />
+    <Compile Include="Models\Output\Categories\FacebookSubscription.cs" />
+    <Compile Include="Models\Output\Categories\FacebookVideo.cs" />
+    <Compile Include="Models\Output\FacebookPhotos.cs" />
+    <Compile Include="Models\Output\Fields\FacebookCategory.cs" />
+    <Compile Include="Models\Output\Fields\FacebookComments.cs" />
+    <Compile Include="Models\Output\Fields\FacebookFanCount.cs" />
+    <Compile Include="Models\Output\Fields\FacebookLikes.cs" />
+    <Compile Include="Models\Output\Fields\FacebookLink.cs" />
+    <Compile Include="Models\Output\Fields\FacebookPicture.cs" />
+    <Compile Include="Models\Output\Fields\FacebookPlace.cs" />
+    <Compile Include="Models\Output\Fields\FacebookShares.cs" />
+    <Compile Include="Models\Output\Fields\FacebookSource.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
